@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתם בפנים! | Ronig.ai</title>
+    <meta name="description" content="נרשמתם לרשימת ההמתנה לקורס יצירת סרטוני אנימציה ב-AI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #6B7F52;
+            --green-light: #8a9e6e;
+            --dark: #222222;
+            --darker: #1a1a1a;
+            --white: #ffffff;
+            --muted: #999999;
+            --border: rgba(107, 127, 82, 0.3);
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            direction: rtl;
+            text-align: right;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── HEADER ── */
+        header {
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--darker);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img { height: 38px; width: auto; }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            display: none;
+        }
+
+        .logo-text span { color: var(--green); }
+
+        /* ── MAIN ── */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .content {
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ── IMAGE ── */
+        .hero-image {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--border);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── TEXT ── */
+        h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .main-text {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: #cccccc;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .main-text strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .main-text .highlight { color: var(--green-light); }
+
+        .timing-line {
+            font-size: 1rem;
+            color: var(--green-light);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .spam-note {
+            display: inline-block;
+            font-size: 0.84rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── BUTTON ── */
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: var(--green);
+            color: var(--white);
+            font-family: 'Heebo', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 0.9rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            margin-bottom: 2rem;
+        }
+
+        .btn-instagram:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+        }
+
+        .closing {
+            font-size: 0.95rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 2rem;
+            background: var(--darker);
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo img { height: 28px; }
+
+        footer p { color: var(--muted); font-size: 0.82rem; }
+
+        /* ── ANIMATION ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 480px) {
+            .hero-image { width: 180px; height: 180px; }
+            h1 { font-size: 2.2rem; }
+            .main-text { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Ronig.ai" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span class="logo-text">Ronig<span>.ai</span></span>
+    </a>
+</header>
+
+<!-- ── MAIN ── -->
+<main>
+    <div class="content">
+
+        <div class="hero-image fade-in">
+            <img src="assets/mikita.png" alt="רוני גרין">
+        </div>
+
+        <div class="fade-in">
+            <h1>אתם בפנים 👀</h1>
+
+            <p class="main-text">
+                נרשמתם לרשימת ההמתנה לקורס<br>
+                <strong>ליצירת סרטוני אנימציה ב-<span class="highlight">AI</span></strong>
+            </p>
+
+            <p class="timing-line">ברגע שהקורס יעלה — אתם הראשונים לדעת</p>
+
+            <span class="spam-note">אם לא קיבלתם מייל, שווה לבדוק גם בספאם</span>
+
+            <br>
+
+            <a href="https://www.instagram.com/ronig.ai" target="_blank" class="btn-instagram">
+                חזרו לאינסטגרם
+            </a>
+
+            <p class="closing">נדבר בקרוב</p>
+        </div>
+
+    </div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-logo">
+        <img src="assets/logo.png" alt="Ronig.ai" onerror="this.style.display='none'">
+    </div>
+    <p>© 2026 Ronig.ai · כל הזכויות שמורות</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

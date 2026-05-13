@@ -133,41 +133,9 @@
             aspect-ratio: 1/1;
         }
 
-        /* ── REINFORCE ── */
-        #reinforce {
-            background: var(--darker);
-            padding: 3rem 2rem;
-        }
-
-        .reinforce-inner {
-            max-width: 680px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .reinforce-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .reinforce-list li {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.6;
-        }
-
-        .reinforce-list li.muted {
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: #aaa;
-        }
-
         /* ── WHAT YOU GET ── */
         #courses {
+            background: var(--darker);
             padding: 3rem 2rem;
             max-width: 680px;
             margin: 0 auto;
@@ -277,7 +245,8 @@
                 padding: 3rem 1.25rem 2rem;
             }
 
-            .hero-image { order: -1; max-width: 280px; margin: 0 auto; }
+            .hero-text { text-align: center; }
+            .hero-image { order: -1; max-width: 340px; margin: 0 auto; }
 
             .courses-grid { grid-template-columns: 1fr; }
 
@@ -316,17 +285,6 @@
     </div>
     <div class="hero-image fade-in">
         <img src="assets/me2.png" alt="רוני גרין" onerror="this.style.background='rgba(107,127,82,0.15)'; this.style.minHeight='360px'">
-    </div>
-</section>
-
-<!-- ── REINFORCE ── -->
-<section id="reinforce">
-    <div class="reinforce-inner fade-in">
-        <ul class="reinforce-list">
-            <li>לא תיאוריה</li>
-            <li>לא הסברים כלליים</li>
-            <li>אלא יצירה של סרטון אמיתי מהתחלה ועד הסוף</li>
-        </ul>
     </div>
 </section>
 
